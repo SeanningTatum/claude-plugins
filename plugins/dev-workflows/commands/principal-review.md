@@ -51,13 +51,13 @@ Evaluate whether the implementation is done in the best way (architecture, patte
 
 | Dimension | What to check |
 |-----------|----------------|
-| **Architecture** | Layering (repo → tRPC → UI), no bypasses (e.g. DB in routes), clear boundaries, workflows for long-running work. |
-| **Project patterns** | Repositories in `app/repositories/`, tRPC in `app/trpc/routes/`, Zod validation, loader auth and `context.trpc`, constants in `app/lib/constants/`, utils in `app/lib/utils.ts`. |
+| **Architecture** | Proper layering (data access → API → UI), no bypasses (e.g. DB in routes), clear boundaries, appropriate patterns for long-running work. |
+| **Project patterns** | Files in correct locations per project conventions, input validation, auth checks, consistent patterns. |
 | **Correctness** | Edge cases, null/undefined, empty lists, idempotency where relevant, transaction boundaries. |
 | **Security** | Auth on procedures and loaders, org/tenant scoping, no raw user input in queries, sensitive data not logged. |
 | **Performance** | N+1 avoidance, unnecessary work in hot paths, appropriate indexing for new queries. |
 | **Maintainability** | DRY (reuse existing schemas/components/helpers), naming, single responsibility, testability. |
-| **Errors** | Custom errors from `@/models/errors` in repos, clear messages, no swallowed errors. |
+| **Errors** | Custom error types where appropriate, clear messages, no swallowed errors. |
 
 ### Output for Phase 2
 
@@ -130,4 +130,4 @@ Use this structure for the review output:
 - When verifying scope: "Does the code match the feature doc?"
 - When asking for best-practices review: "Is this implemented the best way?"
 
-For PR standards (rules, DRY, docs, testing, migrations), use /pr-checker instead or in addition.
+For PR standards (rules, DRY, docs, testing, migrations), run your project's PR validation command instead or in addition.

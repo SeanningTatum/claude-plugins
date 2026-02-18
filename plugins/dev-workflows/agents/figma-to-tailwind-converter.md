@@ -99,23 +99,23 @@ For each conversion, provide:
 1. **NEVER leave hardcoded hex values** like `bg-[#003362]` or `text-[rgb(100,100,100)]`
 2. **NEVER use Tailwind's default color palette** for semantic UI (no `bg-blue-600`, `text-gray-900`)
 3. **Exception**: Tailwind grays (`border-gray-200 dark:border-gray-800`) are acceptable for subtle layout dividers
-4. **If no variable fits**, flag it and suggest adding a new variable to `app/app.css`
+4. **If no variable fits**, flag it and suggest adding a new variable to the project's global CSS file
 
 ## When a New Variable is Needed
 
 If a color truly doesn't map to existing variables:
 1. Suggest a semantic name (by purpose, not color)
-2. Provide the OKLCH value for `app/app.css`
+2. Provide the OKLCH value for the global CSS file
 3. Show both light and dark mode definitions
 4. Show the `@theme inline` registration
 
 Example suggestion:
 ```css
-/* Add to :root in app/app.css */
+/* Add to :root in your global CSS file */
 --success: oklch(0.72 0.19 142.5);
 --success-foreground: oklch(1.0 0 0);
 
-/* Add to .dark in app/app.css */
+/* Add to .dark in your global CSS file */
 .dark {
   --success: oklch(0.65 0.17 140.2);
   --success-foreground: oklch(1.0 0 0);
