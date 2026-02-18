@@ -41,6 +41,15 @@ Universal dev workflows that work with any project.
 /plugin install cf-saas-stack dev-workflows
 ```
 
+### Recommended: Cloudflare Skills
+
+If you're using `cf-saas-stack`, we recommend also installing Cloudflare's official skills plugin for Workers, Durable Objects, Agents SDK, MCP servers, Wrangler, and web performance guidance:
+
+```bash
+/plugin marketplace add cloudflare/skills
+/plugin install cloudflare
+```
+
 ## What's Included
 
 ### Rules
