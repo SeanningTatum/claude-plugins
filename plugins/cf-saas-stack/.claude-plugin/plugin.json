@@ -1,0 +1,35 @@
+{
+  "name": "cf-saas-stack",
+  "version": "1.0.0",
+  "description": "Cloudflare Workers + React Router v7 + tRPC + D1/Drizzle + Better Auth conventions and commands for building SaaS applications on the edge",
+  "author": "SeanningTatum",
+  "rules": [
+    "rules/auth.md",
+    "rules/cloudflare-workflows.md",
+    "rules/context-clients.md",
+    "rules/database.md",
+    "rules/emails.md",
+    "rules/environment-variables.md",
+    "rules/errors.md",
+    "rules/feature-flags.md",
+    "rules/i18n.md",
+    "rules/modals.md",
+    "rules/models.md",
+    "rules/repository-pattern.md",
+    "rules/routes.md",
+    "rules/stripe.md",
+    "rules/structured-output.md"
+  ],
+  "commands": [
+    "commands/db-migration.md",
+    "commands/implement-feature.md",
+    "commands/organization-best-practices.md",
+    "commands/posthog-setup.md",
+    "commands/setup-widget.md",
+    "commands/create-feature-flag.md",
+    "commands/sync-changes.md"
+  ],
+  "agents": [
+    "agents/data-analytics.md"
+  ]
+}
