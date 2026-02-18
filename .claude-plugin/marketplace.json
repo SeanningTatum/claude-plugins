@@ -1,17 +1,20 @@
 {
-  "name": "SeanningTatum Plugin Marketplace",
+  "name": "seanningtatum-plugins",
   "description": "Reusable Claude Code plugins for Cloudflare Workers SaaS development and universal dev workflows",
-  "author": "SeanningTatum",
+  "owner": {
+    "name": "SeanningTatum",
+    "github": "SeanningTatum"
+  },
   "plugins": [
     {
       "name": "cf-saas-stack",
-      "path": "plugins/cf-saas-stack",
+      "source": "./plugins/cf-saas-stack",
       "description": "Cloudflare Workers + React Router v7 + tRPC + D1/Drizzle + Better Auth conventions",
       "tags": ["cloudflare", "react-router", "trpc", "drizzle", "better-auth", "saas"]
     },
     {
       "name": "dev-workflows",
-      "path": "plugins/dev-workflows",
+      "source": "./plugins/dev-workflows",
       "description": "Universal dev workflows — testing, PR reviews, architecture docs, UX research, and more",
       "tags": ["testing", "pull-requests", "architecture", "ux", "playwright", "figma"]
     }
