@@ -12,11 +12,7 @@ Feature or design request: $ARGUMENTS
 
 ## Project Context
 
-**mise en place** — A recipe management app for home cooks who save recipes from YouTube cooking videos and food blogs. Instead of manually copying ingredients and steps, users paste a URL and AI extracts everything automatically—including video timestamps for easy reference. The app also features weekly meal planning with aggregated grocery lists.
-
-**Target Audience**: Home cooks who frequently discover recipes online and want a single place to organize, plan, and shop for their meals.
-
-**Design Direction**: Editorial cookbook aesthetic—warm, artisanal design inspired by classic cookbooks. Playfair Display for headings, Source Sans 3 for body text. Terracotta and sage color palette with grain textures and warm shadows.
+Read `CLAUDE.md` or project documentation to understand the product, target audience, and design direction before starting UX work. If no project context exists, gather it during Phase 0 research.
 
 ## Rules Reference
 
@@ -390,16 +386,15 @@ Break the UI into logical, reusable parts.
 
 ### DRY Pre-Check: Existing Shared Components
 
-**Before designing new components**, run /dry-audit and check what already exists:
+**Before designing new components**, audit for existing patterns and check what already exists:
 
 | What | Where to Look |
 |------|---------------|
-| Loading spinners | `app/components/ui/` — reuse before creating new ones |
-| Error/failed states | `app/components/` or `app/routes/platform/components/shared/` |
-| Empty states | `app/routes/platform/components/shared/` |
-| Status badges | `app/routes/platform/components/shared/` |
-| Source citations | `app/routes/platform/components/market-research/common/` |
-| Base Zod schemas | `app/models/<domain>/common.ts` — extend, don't duplicate |
+| Loading spinners | Shared UI components directory — reuse before creating new ones |
+| Error/failed states | Shared components directory |
+| Empty states | Shared components directory |
+| Status badges | Shared components directory |
+| Base schemas | Domain-specific common files — extend, don't duplicate |
 
 Design new components only when existing shared components don't cover the need. When a pattern appears in 2+ features, extract it to `shared/`.
 
@@ -933,7 +928,7 @@ PHASES:
   - [ ] Create ICP positioning quadrant chart
 - [ ] Phase 3: Design user flows (mermaid diagrams)
 - [ ] Phase 4: Plan component architecture
-  - [ ] DRY pre-check: Review existing shared components (/dry-audit)
+  - [ ] DRY pre-check: Review existing shared components
 - [ ] Phase 5: Create wireframe specifications
 - [ ] Phase 6: Frontend design specification (CRITICAL FOR DISTINCTIVE UI)
   - [ ] Select tone/aesthetic direction

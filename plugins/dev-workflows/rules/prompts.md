@@ -1,6 +1,6 @@
 ---
 paths:
-  - "app/lib/prompts/**"
+  - "**/prompts/**"
 ---
 
 # AI Prompts
@@ -9,7 +9,7 @@ paths:
 AI prompts are organized as exported constant strings with clear instructions for output format and structure.
 
 ## File Organization
-- One prompt per file in `app/prompts/`, named by purpose
+- One prompt per file in your prompts directory, named by purpose
 - Export as `SCREAMING_SNAKE_CASE` constant
 - Include clear output format instructions
 
@@ -65,7 +65,7 @@ CRITICAL:
 
 ## Usage Pattern
 ```typescript
-import { MY_TASK_PROMPT } from "@/prompts/my-task";
+import { MY_TASK_PROMPT } from "./prompts/my-task";
 
 const response = await ai.generateContent({
   contents: [

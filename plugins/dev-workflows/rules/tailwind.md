@@ -1,6 +1,6 @@
 ---
 paths:
-  - "app/app.css"
+  - "**/*.css"
   - "**/*.tsx"
 ---
 
@@ -24,7 +24,7 @@ import { cn } from "@/lib/utils";
 ```
 
 ## Available CSS Variables (Semantic Colors - Use These First)
-Defined in `app/app.css`, auto-switch for dark mode:
+Defined in your global CSS file, auto-switch for dark mode:
 
 | Variable | Usage | Tailwind Class |
 |----------|-------|----------------|
@@ -49,7 +49,7 @@ Defined in `app/app.css`, auto-switch for dark mode:
 ## Decision Flow
 1. Check if a semantic variable exists (`bg-background`, `text-foreground`)
 2. If not, check if a brand color works (`bg-brand-100`)
-3. If a new color is truly needed, ADD IT TO `app/app.css` first in both `:root` and `.dark`, then register in `@theme inline` block
+3. If a new color is truly needed, ADD IT TO your global CSS file first in both `:root` and `.dark`, then register in `@theme inline` block
 
 ## Forbidden Patterns
 - **NEVER** use template literals for class names
@@ -75,7 +75,7 @@ Defined in `app/app.css`, auto-switch for dark mode:
 4. Register in `@theme inline` to make available as Tailwind class
 
 ## File Reference
-- CSS Variables: `app/app.css`
+- CSS Variables: Your global CSS file (e.g., `globals.css`, `app.css`)
 - Light mode: `:root { ... }`
 - Dark mode: `.dark { ... }`
 - Tailwind theme mapping: `@theme inline { ... }`

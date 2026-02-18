@@ -7,7 +7,9 @@
     "rules/auth.md",
     "rules/cloudflare-workflows.md",
     "rules/context-clients.md",
+    "rules/context-docs.md",
     "rules/database.md",
+    "rules/docs.md",
     "rules/emails.md",
     "rules/environment-variables.md",
     "rules/errors.md",
@@ -15,21 +17,32 @@
     "rules/i18n.md",
     "rules/modals.md",
     "rules/models.md",
+    "rules/playwright-tests.md",
     "rules/repository-pattern.md",
     "rules/routes.md",
     "rules/stripe.md",
-    "rules/structured-output.md"
+    "rules/structured-output.md",
+    "rules/test-credentials.md",
+    "rules/testing-workflow.md"
   ],
   "commands": [
+    "commands/architecture-tracker.md",
     "commands/db-migration.md",
+    "commands/docs-structure.md",
+    "commands/dry-audit.md",
     "commands/implement-feature.md",
     "commands/organization-best-practices.md",
     "commands/posthog-setup.md",
+    "commands/pr-checker.md",
     "commands/setup-widget.md",
     "commands/create-feature-flag.md",
     "commands/sync-changes.md"
   ],
   "agents": [
-    "agents/data-analytics.md"
+    "agents/architecture-tracker.md",
+    "agents/context-keeper.md",
+    "agents/data-analytics.md",
+    "agents/logger.md",
+    "agents/tester.md"
   ]
 }

@@ -12,7 +12,7 @@ PR context: $ARGUMENTS
 
 ## Before Creating PR
 
-**IMPORTANT: Run /pr-checker first** to validate changes follow project rules.
+**IMPORTANT: Run your PR validation checks first** to validate changes follow project rules.
 
 Read `CLAUDE.md` for the compressed Rules Index. Ensure all touched files comply with their respective rules before creating the PR.
 
@@ -20,7 +20,7 @@ Read `CLAUDE.md` for the compressed Rules Index. Ensure all touched files comply
 
 For feature PRs, ensure these are updated:
 - [ ] Project documentation updated
-- [ ] `docs/architecture/overview.md` updated (via /architecture-tracker) - if new routes, features, or schema changes
+- [ ] `docs/architecture/overview.md` updated - if new routes, features, or schema changes
 - [ ] Testing plan exists with screenshots
 
 ## Workflow
@@ -256,13 +256,13 @@ None
 ## Screenshots
 
 ### Preferences Page (Empty State)
-![Empty preferences](https://github.com/acme/app/blob/feat/preferences/docs/testing/preferences/screenshots/preferences-empty.png?raw=true)
+![Empty preferences](https://github.com/{owner}/{repo}/blob/{branch}/docs/testing/preferences/screenshots/preferences-empty.png?raw=true)
 
 ### Preferences Page (Filled)
-![Filled preferences](https://github.com/acme/app/blob/feat/preferences/docs/testing/preferences/screenshots/preferences-filled.png?raw=true)
+![Filled preferences](https://github.com/{owner}/{repo}/blob/{branch}/docs/testing/preferences/screenshots/preferences-filled.png?raw=true)
 
 ### Dark Mode Toggle
-![Dark mode](https://github.com/acme/app/blob/feat/preferences/docs/testing/preferences/screenshots/dark-mode.png?raw=true)
+![Dark mode](https://github.com/{owner}/{repo}/blob/{branch}/docs/testing/preferences/screenshots/dark-mode.png?raw=true)
 
 ## Test Cases
 - [ ] Navigate to /settings/preferences and verify page loads

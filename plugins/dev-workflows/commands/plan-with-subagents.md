@@ -18,14 +18,11 @@ Read `CLAUDE.md` and project documentation for the compressed Rules Index. When 
 
 | File Pattern | Rule to Include in Plan |
 |--------------|------------------------|
-| `app/repositories/*.ts` | Repository pattern (see CLAUDE.md) |
-| `app/trpc/routes/*.ts` | Repository pattern (see CLAUDE.md) |
-| `app/routes/**/*.tsx` | Routes conventions (see CLAUDE.md) |
-| `app/db/schema.ts` | Database conventions (see CLAUDE.md) |
-| `app/components/*-modal.tsx` | Modal patterns (see CLAUDE.md) |
-| `**/stripe*`, `**/payment*` | Stripe conventions (see CLAUDE.md) |
-| `e2e/**/*` | Playwright rules (see CLAUDE.md) |
+| `src/**/*.ts` | Project conventions (see CLAUDE.md) |
+| `tests/**/*`, `e2e/**/*` | Testing rules (see CLAUDE.md) |
 | `docs/**/*.md` | Documentation conventions (see CLAUDE.md) |
+
+Extend this table with project-specific file patterns and their applicable rules.
 
 Include rule requirements in task descriptions so each step knows what patterns to follow.
 
@@ -51,15 +48,15 @@ Create tasks following the data flow pattern:
 ```
 1. Competitive Research (if new feature with UX decisions)
 2. Schema/Database changes
-3. Repository layer
-4. tRPC routes
+3. Data access layer
+4. API routes
 5. UI Components
 6. Route pages
 7. Feature Architecture Documentation (docs/features/)
 8. Debug Logging (for complex logic/integrations)
 9. Testing
 10. Context Documentation
-11. Architecture Documentation (high-level-architecture.md)
+11. Architecture Documentation
 12. Analytics Dashboard (if new data to track)
 13. Principal Review (plan alignment + implementation quality)
 14. PR Validation
@@ -82,10 +79,10 @@ Map each task to the appropriate approach:
 | Add logging | Direct implementation | Adding debug logs to code |
 | Testing | Bash with playwright + write tests | Verify implementation, write e2e tests |
 | Documentation | Direct file editing | Update project docs |
-| Architecture Docs | /architecture-tracker | Update route maps, flows, changelog |
+| Architecture Docs | architecture tracker | Update route maps, flows, changelog |
 | Analytics | Direct implementation | Create dashboards for new data |
 | Principal Review | /principal-review | Plan alignment + implementation quality |
-| PR Validation | /pr-checker | Final validation step |
+| PR Validation | PR validation | Final validation step |
 
 ### Step 4: Build the Plan
 
@@ -116,10 +113,10 @@ Output format:
 **Description:** Run /principal-review to verify implementation matches the plan and is implemented in the best way.
 
 #### Task N: PR Validation
-**Approach:** Run /pr-checker
-**Description:** Run /pr-checker before creating PR
+**Approach:** Run PR validation
+**Description:** Run PR validation before creating PR
 
-### Validation Requirements (from /pr-checker)
+### Validation Requirements (from PR validation)
 {List applicable checks based on files touched}
 ```
 
@@ -131,14 +128,11 @@ When a task touches certain files, note the validation requirement:
 
 | File Pattern | Required Check |
 |--------------|----------------|
-| `app/repositories/*.ts` | Repository pattern compliance |
-| `app/trpc/routes/*.ts` | tRPC validation, Zod inputs |
-| `app/routes/**/*.tsx` | Route conventions, auth checks |
-| `app/db/schema.ts` | Migration with descriptive name |
-| `drizzle/*.sql` | Migration naming convention |
-| `app/models/*.ts` | Zod schema standards |
-| `app/components/*-modal.tsx` | Modal pattern compliance |
-| `e2e/**/*` | Playwright rules |
+| `src/**/*.ts` | Project conventions compliance |
+| `tests/**/*`, `e2e/**/*` | Testing rules |
+| `docs/**/*.md` | Documentation conventions |
+
+Extend this table with project-specific file patterns and their applicable validation checks.
 
 ---
 
@@ -219,8 +213,8 @@ The testing task MUST follow this workflow:
 ### Architecture Documentation Task (when applicable)
 ```markdown
 #### Task: Update Architecture Documentation
-**Approach:** /architecture-tracker
-**Files:** `.cursor/context/high-level-architecture.md`
+**Approach:** architecture tracker
+**Files:** Architecture overview document
 **Description:** Update living architecture doc with:
   - New routes added to Route Map diagram
   - New rows in Information Architecture table
@@ -271,27 +265,27 @@ exposing via tRPC and creating a settings page.
 
 #### Task 2: Add Database Schema
 **Approach:** Direct implementation
-**Files:** `app/db/schema.ts`, `drizzle/*.sql`
+**Files:** Schema and migration files
 **Description:** Add userPreferences table with theme, notifications fields
 **PR Checks:** Migration naming (snake_case, descriptive)
 
-#### Task 3: Create Repository
+#### Task 3: Create Data Access Layer
 **Approach:** Direct implementation
-**Files:** `app/repositories/user-preferences.ts`
+**Files:** Data access / repository files
 **Description:** CRUD operations for preferences with proper error handling
-**PR Checks:** Repository pattern, Database type alias, try-catch
+**PR Checks:** Project conventions compliance
 
-#### Task 4: Add tRPC Routes
+#### Task 4: Add API Routes
 **Approach:** Direct implementation
-**Files:** `app/trpc/routes/user-preferences.ts`, `app/trpc/router.ts`
-**Description:** getPreferences, updatePreferences with Zod validation
-**PR Checks:** Zod inputs, protectedProcedure usage
+**Files:** API route files
+**Description:** getPreferences, updatePreferences with input validation
+**PR Checks:** Input validation, auth checks
 
 #### Task 5: Build Settings Page
 **Approach:** Direct implementation
-**Files:** `app/routes/settings/preferences.tsx`
+**Files:** Settings page route
 **Description:** Form for updating theme and notification preferences
-**PR Checks:** Loader auth check, context.trpc usage
+**PR Checks:** Auth check, data fetching conventions
 
 #### Task 6: Create Feature Architecture Doc
 **Approach:** Direct file creation
@@ -300,7 +294,7 @@ exposing via tRPC and creating a settings page.
 
 #### Task 7: Add Debug Logging
 **Approach:** Direct implementation
-**Files:** `app/repositories/user-preferences.ts`, `app/trpc/routes/user-preferences.ts`
+**Files:** Data access and API route files for user preferences
 **Description:** Add structured logs for preference operations (create, update, validation errors)
 
 #### Task 8: Test Implementation
@@ -312,7 +306,7 @@ exposing via tRPC and creating a settings page.
 **Description:** Add preferences feature summary to project docs
 
 #### Task 10: Update Architecture Documentation
-**Approach:** /architecture-tracker
+**Approach:** architecture tracker
 **Description:** Update high-level-architecture.md with new /settings/preferences route, add changelog entry
 
 #### Task 11: Create Analytics Dashboard
@@ -324,18 +318,18 @@ exposing via tRPC and creating a settings page.
 **Description:** Verify implementation matches plan and assess implementation quality.
 
 #### Task 13: PR Validation
-**Approach:** Run /pr-checker
+**Approach:** Run PR validation
 **Description:** Run validation checklist before creating PR
 
-### Validation Requirements (from /pr-checker)
-- [ ] Repository pattern compliance (Task 3)
-- [ ] tRPC Zod validation (Task 4)
+### Validation Requirements (from PR validation)
+- [ ] Project conventions compliance (Task 3)
+- [ ] API input validation (Task 4)
 - [ ] Route auth checks (Task 5)
 - [ ] Migration naming convention (Task 2)
 - [ ] Feature architecture doc exists (Task 6)
 - [ ] Debug logging added (Task 7)
 - [ ] Project docs updated (Task 9)
-- [ ] high-level-architecture.md updated (Task 10)
+- [ ] Architecture docs updated (Task 10)
 - [ ] Testing plan exists (Task 8)
 - [ ] Analytics dashboard created (Task 11)
 ```
@@ -408,7 +402,7 @@ Then run PR validation below.
 
 ### PR Validation (before creating PR)
 
-Run /pr-checker which validates:
+Run PR validation which validates:
 
 - [ ] Code rules compliance (per file patterns above)
 - [ ] **Implementation plan saved** (`docs/plans/{feature}-implementation.md`)
@@ -447,7 +441,7 @@ Run /pr-checker which validates:
 | Architecture | `docs/features/{feature}-architecture.md` | New features with multiple layers |
 | Testing | `docs/testing/{feature}/{feature}.md` | All features |
 | Context | Project documentation | All features/changes |
-| High-Level Architecture | `.cursor/context/high-level-architecture.md` | New routes, features, schema changes |
+| High-Level Architecture | Architecture overview doc | New routes, features, schema changes |
 
 **Important:** After implementation is complete, save the plan to `docs/plans/` for future reference.
 | Debug Logs | In implementation files | Complex logic, integrations, error-prone paths |

@@ -4,35 +4,20 @@
   "description": "Universal dev workflows — testing, PR reviews, architecture docs, UX research, Figma integration, and more. Works with any project.",
   "author": "SeanningTatum",
   "rules": [
-    "rules/context-docs.md",
-    "rules/docs.md",
     "rules/frontend-task.md",
-    "rules/playwright-tests.md",
     "rules/prompts.md",
     "rules/pull-request.md",
-    "rules/tailwind.md",
-    "rules/test-credentials.md",
-    "rules/testing-workflow.md"
+    "rules/tailwind.md"
   ],
   "commands": [
-    "commands/architecture-tracker.md",
     "commands/create-pull-request.md",
-    "commands/design-research.md",
-    "commands/docs-structure.md",
-    "commands/dry-audit.md",
     "commands/frontend-design.md",
     "commands/plan-with-subagents.md",
-    "commands/pr-checker.md",
     "commands/principal-review.md",
-    "commands/ux-product-thinking.md",
-    "commands/ux-strategist.md"
+    "commands/ux-product-thinking.md"
   ],
   "agents": [
-    "agents/architecture-tracker.md",
-    "agents/context-keeper.md",
     "agents/figma-design-validator.md",
-    "agents/figma-to-tailwind-converter.md",
-    "agents/logger.md",
-    "agents/tester.md"
+    "agents/figma-to-tailwind-converter.md"
   ]
 }
