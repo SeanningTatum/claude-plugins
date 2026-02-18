@@ -2,22 +2,19 @@
   "name": "dev-workflows",
   "version": "1.0.0",
   "description": "Universal dev workflows — testing, PR reviews, architecture docs, UX research, Figma integration, and more. Works with any project.",
-  "author": "SeanningTatum",
-  "rules": [
-    "rules/frontend-task.md",
-    "rules/prompts.md",
-    "rules/pull-request.md",
-    "rules/tailwind.md"
-  ],
+  "author": {
+    "name": "SeanningTatum",
+    "url": "https://github.com/SeanningTatum"
+  },
   "commands": [
-    "commands/create-pull-request.md",
-    "commands/frontend-design.md",
-    "commands/plan-with-subagents.md",
-    "commands/principal-review.md",
-    "commands/ux-product-thinking.md"
+    "./commands/create-pull-request.md",
+    "./commands/frontend-design.md",
+    "./commands/plan-with-subagents.md",
+    "./commands/principal-review.md",
+    "./commands/ux-product-thinking.md"
   ],
   "agents": [
-    "agents/figma-design-validator.md",
-    "agents/figma-to-tailwind-converter.md"
+    "./agents/figma-design-validator.md",
+    "./agents/figma-to-tailwind-converter.md"
   ]
 }
