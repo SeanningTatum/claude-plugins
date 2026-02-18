@@ -2,47 +2,28 @@
   "name": "cf-saas-stack",
   "version": "1.0.0",
   "description": "Cloudflare Workers + React Router v7 + tRPC + D1/Drizzle + Better Auth conventions and commands for building SaaS applications on the edge",
-  "author": "SeanningTatum",
-  "rules": [
-    "rules/auth.md",
-    "rules/cloudflare-workflows.md",
-    "rules/context-clients.md",
-    "rules/context-docs.md",
-    "rules/database.md",
-    "rules/docs.md",
-    "rules/emails.md",
-    "rules/environment-variables.md",
-    "rules/errors.md",
-    "rules/feature-flags.md",
-    "rules/i18n.md",
-    "rules/modals.md",
-    "rules/models.md",
-    "rules/playwright-tests.md",
-    "rules/repository-pattern.md",
-    "rules/routes.md",
-    "rules/stripe.md",
-    "rules/structured-output.md",
-    "rules/test-credentials.md",
-    "rules/testing-workflow.md"
-  ],
+  "author": {
+    "name": "SeanningTatum",
+    "url": "https://github.com/SeanningTatum"
+  },
   "commands": [
-    "commands/architecture-tracker.md",
-    "commands/db-migration.md",
-    "commands/docs-structure.md",
-    "commands/dry-audit.md",
-    "commands/implement-feature.md",
-    "commands/organization-best-practices.md",
-    "commands/posthog-setup.md",
-    "commands/pr-checker.md",
-    "commands/setup-widget.md",
-    "commands/create-feature-flag.md",
-    "commands/sync-changes.md"
+    "./commands/architecture-tracker.md",
+    "./commands/db-migration.md",
+    "./commands/docs-structure.md",
+    "./commands/dry-audit.md",
+    "./commands/implement-feature.md",
+    "./commands/organization-best-practices.md",
+    "./commands/posthog-setup.md",
+    "./commands/pr-checker.md",
+    "./commands/setup-widget.md",
+    "./commands/create-feature-flag.md",
+    "./commands/sync-changes.md"
   ],
   "agents": [
-    "agents/architecture-tracker.md",
-    "agents/context-keeper.md",
-    "agents/data-analytics.md",
-    "agents/logger.md",
-    "agents/tester.md"
+    "./agents/architecture-tracker.md",
+    "./agents/context-keeper.md",
+    "./agents/data-analytics.md",
+    "./agents/logger.md",
+    "./agents/tester.md"
   ]
 }
